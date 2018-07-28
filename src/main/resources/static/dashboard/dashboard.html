@@ -1,0 +1,27 @@
+<h1>
+	JWT Simple Project
+</h1>
+<div ng-show="authenticated">
+	<p>
+		Welcome <b>{{user.firstName}} {{user.lastName}}</b>
+	</p>
+	<p>
+		Your authority(s)
+		<code ng-repeat="authority in user.authorities">{{authority.authority
+			| limitTo:999:5}}</code>
+	</p>
+</div>
+<div ng-show="!authenticated">
+	<p>Welcome, guest.</p>
+</div>
+<div style="margin-bottom: 10px;">
+	<button type="button" class="btn btn-info" ng-click="getUserInfo()">Get User Data</button>
+	<button type="button" class="btn btn-info" ng-click="getAllUserInfo()">Get Users Data</button>
+</div>
+<div class="alert {{alertStatus}}" ng-show="serverResponse">
+	<b>Server Response:</b>
+	<pre>Path: /{{serverResponse.config.url}}</pre>
+	<pre>Method: {{serverResponse.config.method}}</pre>
+	<pre>Status: {{serverResponse.status}}</pre>
+	<pre>Data: {{serverResponse.data}}</pre>
+</div>

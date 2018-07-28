@@ -1,0 +1,7 @@
+app:
+  name: JWT simple project
+jwt:
+  header: Authorization
+  expires_in: 300
+  mobile_expires_in: 600
+  secret: queenvictoria
